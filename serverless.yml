@@ -57,3 +57,16 @@ functions:
           cors: true
           authorizer:
             arn: arn:aws:cognito-idp:us-west-2:310629266499:userpool/us-west-2_BgtGNJKSu
+
+  list:
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # - path: url path is /notes
+    # - method: GET request
+    handler: list.main
+    events:
+      - http:
+          path: notes
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:310629266499:userpool/us-west-2_BgtGNJKSu
